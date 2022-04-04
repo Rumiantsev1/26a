@@ -76,6 +76,7 @@ func removeDivThree(currentChan <-chan int, nextChan chan<- int) {
 func writeToBuffer(currentChan <-chan int, r *RingIntBuffer) {
 	for number := range currentChan {
 		r.Push(number)
+		fmt.Println("number is writed to buffer ", number)
 	}
 }
 
